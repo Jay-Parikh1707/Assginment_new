@@ -21,9 +21,7 @@ public class MainActivity extends AppCompatActivity {
     String mTitle[] = {"Jayant Ojha", "Dhruv Rawat", "Himanshu Singh", "Tushar Jain", "Jagdish Chandra"};
     String mDescription[] = {"Jaynat Ojha is a very good person", "Dhruv Rawat is a very good person", "Himanshu Singh is a very good person", "Tushar Jain is a very good person", "Jagdish Chandra ia a very good person"};
     int images[] = {R.drawable.jayant, R.drawable.dhruv, R.drawable.himanshu, R.drawable.tushar, R.drawable.jagdish};
-    // so our images and other things are set in array
 
-    // now paste some images in drawable
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,35 +29,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         listView = findViewById(R.id.listView);
-        // now create an adapter class
+
 
         MyAdapter adapter = new MyAdapter(this, mTitle, mDescription, images);
         listView.setAdapter(adapter);
-        // there is my mistake...
-        // now again check this..
 
-        // now set item click on list view
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (position ==  0) {
-                    Toast.makeText(MainActivity.this, "Facebook Description", Toast.LENGTH_SHORT).show();
-                }
-                if (position ==  0) {
-                    Toast.makeText(MainActivity.this, "Whatsapp Description", Toast.LENGTH_SHORT).show();
-                }
-                if (position ==  0) {
-                    Toast.makeText(MainActivity.this, "Twitter Description", Toast.LENGTH_SHORT).show();
-                }
-                if (position ==  0) {
-                    Toast.makeText(MainActivity.this, "Instagram Description", Toast.LENGTH_SHORT).show();
-                }
-                if (position ==  0) {
-                    Toast.makeText(MainActivity.this, "Youtube Description", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-        // so item click is done now check list view
+
+
     }
 
     class MyAdapter extends ArrayAdapter<String> {
@@ -87,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             TextView myTitle = row.findViewById(R.id.textView1);
             TextView myDescription = row.findViewById(R.id.textView2);
 
-            // now set our resources on views
+
             images.setImageResource(rImgs[position]);
             myTitle.setText(rTitle[position]);
             myDescription.setText(rDescription[position]);
